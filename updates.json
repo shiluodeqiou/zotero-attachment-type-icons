@@ -1,0 +1,17 @@
+{
+	"addons": {
+		"office-icons@linqingming.local": {
+			"updates": [
+				{
+					"version": "1.0.2",
+					"update_link": "https://github.com/lin-qingming/zotero-attachment-type-icons/releases/download/v1.0.2/attachment-type-icons-1.0.2.xpi",
+					"applications": {
+						"zotero": {
+							"strict_min_version": "7.0"
+						}
+					}
+				}
+			]
+		}
+	}
+}
