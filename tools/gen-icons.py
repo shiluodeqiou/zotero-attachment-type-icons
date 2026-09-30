@@ -30,10 +30,12 @@ FAMILIES = {
     "PowerPoint": "#E8730C",  # orange, deliberately not the brand's #C43E1C (see above)
     "Markdown":   "#8250DF",  # purple: Markdown has no brand colour, and this one clashes
                               # with none of the above nor with PDF red / EPUB green
+    "XMind":      "#0891B2",  # cyan: XMind's own red/orange would collide with PDF and
+                              # PowerPoint, and cyan stays clear of Word blue at 16px
 }
 
 # Filename stem per family (lowercased suffix works, but be explicit).
-STEMS = {"Word": "word", "Excel": "excel", "PowerPoint": "powerpoint", "Markdown": "markdown"}
+STEMS = {"Word": "word", "Excel": "excel", "PowerPoint": "powerpoint", "Markdown": "markdown", "XMind": "xmind"}
 
 
 def tint(hex_colour, ratio=0.6):

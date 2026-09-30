@@ -4,7 +4,7 @@
 var { AddonManager } = ChromeUtils.importESModule("resource://gre/modules/AddonManager.sys.mjs");
 
 // Set this to the absolute path of the .xpi that build.sh produced.
-var path = "/path/to/attachment-type-icons-1.0.2.xpi";
+var path = "/path/to/attachment-type-icons-1.0.3.xpi";
 var out = [];
 
 if (path.startsWith("/path/to/")) {

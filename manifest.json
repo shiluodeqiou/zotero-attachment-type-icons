@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
 	"name": "Attachment Type Icons",
-	"version": "1.0.2",
-	"description": "Gives Word, Excel, PowerPoint and Markdown attachments their own icons in the items list, instead of the generic blank page.",
+	"version": "1.0.3",
+	"description": "Gives Word, Excel, PowerPoint, Markdown and XMind attachments their own icons in the items list, instead of the generic blank page.",
 	"applications": {
 		"zotero": {
 			"id": "office-icons@linqingming.local",

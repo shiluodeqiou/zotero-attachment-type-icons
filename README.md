@@ -1,6 +1,6 @@
 # Attachment Type Icons for Zotero
 
-Word, Excel, PowerPoint and Markdown attachments get their own icons in the items list instead of
+Word, Excel, PowerPoint, Markdown and XMind attachments get their own icons in the items list instead of
 the generic blank page.
 
 ![screenshot](screenshot.png)
@@ -28,7 +28,7 @@ raised against 9.0-beta
 ```
 
 Then in Zotero: **Tools → Plugins → gear icon → Install Plugin From File…** and pick
-`attachment-type-icons-1.0.2.xpi`. No restart needed.
+`attachment-type-icons-1.0.3.xpi`. No restart needed.
 
 ## What it covers
 
@@ -46,6 +46,7 @@ content type or a generic one, which is common with drag-and-drop and sync tools
 | Excel | `xls` `xlsx` `xlsm` `xlsb` `xlt` `xltx` `xltm` `ods` `csv` |
 | PowerPoint | `ppt` `pptx` `pptm` `pps` `ppsx` `ppsm` `pot` `potx` `odp` |
 | Markdown | `md` `markdown` `mdown` `mkd` `mkdn` `mdwn` `mdtxt` `mdtext` |
+| XMind | `xmind` `xmt` |
 
 Linked files get the chain-badge variant, matching how Zotero distinguishes
 `attachment-pdf` from `attachment-pdf-link`.
@@ -64,8 +65,8 @@ Linked files get the chain-badge variant, matching how Zotero distinguishes
 
 ## How it works
 
-`bootstrap.js` wraps `getItemTypeIconName()` so Office and Markdown files return
-`attachmentWord` / `attachmentExcel` / `attachmentPowerPoint` / `attachmentMarkdown` (plus `…Link` variants),
+`bootstrap.js` wraps `getItemTypeIconName()` so Office, Markdown and XMind files return
+`attachmentWord` / `attachmentExcel` / `attachmentPowerPoint` / `attachmentMarkdown` / `attachmentXMind` (plus `…Link` variants),
 and injects `style.css`, which defines icons for those names. The wrapper falls back to
 the original function on anything unexpected, and `shutdown()` restores it.
 
@@ -102,7 +103,8 @@ PowerPoint deliberately uses orange (`#E8730C`) rather than its brand `#C43E1C`:
 brand colour shares the page geometry with PDF and reads as the same red at 16px. Excel
 needs no such nudge — EPUB is also green, but its glyph is a book rather than a page.
 Markdown has no brand colour of its own, so it uses purple (`#8250DF`), which clashes
-with none of the other badges.
+with none of the other badges. XMind uses cyan (`#0891B2`) instead of its own red/orange,
+which would be indistinguishable from PDF and PowerPoint.
 
 ## Compatibility
 
