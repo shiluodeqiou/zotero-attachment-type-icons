@@ -3,8 +3,13 @@
 
 var { AddonManager } = ChromeUtils.importESModule("resource://gre/modules/AddonManager.sys.mjs");
 
-var path = "/Users/linqingming/Project/zotero/zotero-attachment-type-icons/attachment-type-icons-1.0.2.xpi";
+// Set this to the absolute path of the .xpi that build.sh produced.
+var path = "/path/to/attachment-type-icons-1.0.2.xpi";
 var out = [];
+
+if (path.startsWith("/path/to/")) {
+	return "Edit `path` at the top of this script to point at your .xpi first.";
+}
 
 out.push("app        = " + Services.appinfo.version + "  (ID " + Services.appinfo.ID + ")");
 out.push("signatures required = " + Services.prefs.getBoolPref("xpinstall.signatures.required", true));
