@@ -1,6 +1,6 @@
 # Attachment Type Icons for Zotero
 
-Word, Excel, PowerPoint, Markdown and XMind attachments get their own icons in the items list instead of
+Word, Excel, PowerPoint, Markdown, XMind and HTML attachments get their own icons in the items list instead of
 the generic blank page.
 
 ![screenshot](screenshot.png)
@@ -47,6 +47,7 @@ content type or a generic one, which is common with drag-and-drop and sync tools
 | PowerPoint | `ppt` `pptx` `pptm` `pps` `ppsx` `ppsm` `pot` `potx` `odp` |
 | Markdown | `md` `markdown` `mdown` `mkd` `mkdn` `mdwn` `mdtxt` `mdtext` |
 | XMind | `xmind` `xmt` |
+| HTML | `html` `htm` |
 
 Linked files get the chain-badge variant, matching how Zotero distinguishes
 `attachment-pdf` from `attachment-pdf-link`.
@@ -65,7 +66,7 @@ Linked files get the chain-badge variant, matching how Zotero distinguishes
 
 ## How it works
 
-`bootstrap.js` wraps `getItemTypeIconName()` so Office, Markdown and XMind files return
+`bootstrap.js` wraps `getItemTypeIconName()` so Office, Markdown, XMind and HTML files return
 `attachmentWord` / `attachmentExcel` / `attachmentPowerPoint` / `attachmentMarkdown` / `attachmentXMind` (plus `…Link` variants),
 and injects `style.css`, which defines icons for those names. The wrapper falls back to
 the original function on anything unexpected, and `shutdown()` restores it.
@@ -105,6 +106,8 @@ needs no such nudge — EPUB is also green, but its glyph is a book rather than 
 Markdown has no brand colour of its own, so it uses purple (`#8250DF`), which clashes
 with none of the other badges. XMind uses cyan (`#0891B2`) instead of its own red/orange,
 which would be indistinguishable from PDF and PowerPoint.
+HTML uses the web orange (`#E34F26`) and a small hand-drawn `</>` mark inside the
+page body, so `.html` and `.htm` remain recognisable at Zotero's 16px icon size.
 
 ## Compatibility
 

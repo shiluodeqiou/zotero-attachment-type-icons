@@ -11,7 +11,7 @@
  * identically, and Zotero also strips the extension from the attachment title, leaving
  * nothing to tell them apart by.
  *
- * This plugin wraps that one function to return a distinct name for Office, Markdown and XMind files, and
+ * This plugin wraps that one function to return a distinct name for Office, Markdown, XMind and HTML files, and
  * ships CSS defining icons for those names. The icons are Zotero's own attachment
  * geometry with a recoloured badge, so they sit flush with the native PDF/EPUB ones.
  *
@@ -57,6 +57,9 @@ var BY_CONTENT_TYPE = {
 	// XMind
 	'application/vnd.xmind.workbook': 'XMind',
 	'application/x-xmind': 'XMind',
+	// HTML
+	'text/html': 'HTML',
+	'application/xhtml+xml': 'HTML',
 };
 
 // Fallback for files Zotero stored with no content type, or with a generic one such as
@@ -72,11 +75,12 @@ var BY_EXTENSION = {
 	md: 'Markdown', markdown: 'Markdown', mdown: 'Markdown', mkd: 'Markdown',
 	mkdn: 'Markdown', mdwn: 'Markdown', mdtxt: 'Markdown', mdtext: 'Markdown',
 	xmind: 'XMind', xmt: 'XMind',
+	html: 'HTML', htm: 'HTML',
 };
 
 /**
  * @param {Zotero.Item} item - a file attachment
- * @return {String|null} "Word" | "Excel" | "PowerPoint" | "Markdown" | "XMind", or null otherwise
+ * @return {String|null} "Word" | "Excel" | "PowerPoint" | "Markdown" | "XMind" | "HTML", or null otherwise
  */
 function familyFor(item) {
 	let contentType = item.attachmentContentType;

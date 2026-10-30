@@ -32,10 +32,11 @@ FAMILIES = {
                               # with none of the above nor with PDF red / EPUB green
     "XMind":      "#0891B2",  # cyan: XMind's own red/orange would collide with PDF and
                               # PowerPoint, and cyan stays clear of Word blue at 16px
+    "HTML":       "#E34F26",  # HTML orange, a compact web/code cue at 16px
 }
 
 # Filename stem per family (lowercased suffix works, but be explicit).
-STEMS = {"Word": "word", "Excel": "excel", "PowerPoint": "powerpoint", "Markdown": "markdown", "XMind": "xmind"}
+STEMS = {"Word": "word", "Excel": "excel", "PowerPoint": "powerpoint", "Markdown": "markdown", "XMind": "xmind", "HTML": "html"}
 
 
 def tint(hex_colour, ratio=0.6):
@@ -104,6 +105,12 @@ WHITE_LINK = '''<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmln
 </svg>
 '''
 
+# A small code glyph in the document body makes HTML distinct from other orange
+# file families at 16px while keeping the native Zotero page silhouette intact.
+HTML_MARK = '''
+<path d="M6 10.2L4.8 11.2L6 12.2M9 10.2L10.2 11.2L9 12.2M8 10L7 12.4" stroke="__BASE__" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+'''
+
 
 def write(name, content):
     path = os.path.join(ICONS, name)
@@ -126,6 +133,8 @@ def main():
             svg = template
             for k, v in subs.items():
                 svg = svg.replace(k, v)
+            if family == "HTML":
+                svg = svg.replace("</svg>", HTML_MARK.replace("__BASE__", base) + "</svg>")
             written.append(write("{}-{}.svg".format(stem, suffix), svg))
 
     # --- style.css ---------------------------------------------------------------

@@ -41,6 +41,14 @@
 	.focus-states-target .row .icon-item-type[data-item-type="attachmentXMindLink"] {
 		background: url("icons/xmind-link-light.svg") no-repeat center/contain;
 	}
+	.icon-item-type[data-item-type="attachmentHTML"],
+	.focus-states-target .row .icon-item-type[data-item-type="attachmentHTML"] {
+		background: url("icons/html-light.svg") no-repeat center/contain;
+	}
+	.icon-item-type[data-item-type="attachmentHTMLLink"],
+	.focus-states-target .row .icon-item-type[data-item-type="attachmentHTMLLink"] {
+		background: url("icons/html-link-light.svg") no-repeat center/contain;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -84,6 +92,14 @@
 	.focus-states-target .row .icon-item-type[data-item-type="attachmentXMindLink"] {
 		background: url("icons/xmind-link-dark.svg") no-repeat center/contain;
 	}
+	.icon-item-type[data-item-type="attachmentHTML"],
+	.focus-states-target .row .icon-item-type[data-item-type="attachmentHTML"] {
+		background: url("icons/html-dark.svg") no-repeat center/contain;
+	}
+	.icon-item-type[data-item-type="attachmentHTMLLink"],
+	.focus-states-target .row .icon-item-type[data-item-type="attachmentHTMLLink"] {
+		background: url("icons/html-link-dark.svg") no-repeat center/contain;
+	}
 }
 
 /* Selected in a focused tree: Zotero switches to an all-white glyph, which
@@ -117,5 +133,11 @@
 	background: url("icons/page-white.svg") no-repeat center/contain;
 }
 .focus-states-target:focus-within .row.selected .icon-item-type[data-item-type="attachmentXMindLink"] {
+	background: url("icons/page-link-white.svg") no-repeat center/contain;
+}
+.focus-states-target:focus-within .row.selected .icon-item-type[data-item-type="attachmentHTML"] {
+	background: url("icons/page-white.svg") no-repeat center/contain;
+}
+.focus-states-target:focus-within .row.selected .icon-item-type[data-item-type="attachmentHTMLLink"] {
 	background: url("icons/page-link-white.svg") no-repeat center/contain;
 }
